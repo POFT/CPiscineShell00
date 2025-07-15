@@ -167,4 +167,39 @@ Cria a tua própria chave SSH. Uma vez criada:
 ◦ Atualize a sua chave SSH na intra. Isto vai permitir enviar o seu repositório
 para o nosso servidor git.
 
+INCOMPLETE
+
+
++++++++++++++++++++++++++++++++++++++++++++
+# CPiscineShell01
+Exercício 01: print_groups
+
+Escreva uma linha de comando que determine e mostre a lista de grupos dos quais
+o login especificado na environment variable FT_USER é membro, separando-os
+por vírgulas sem espaços.
+
+
+#Solucao
+man id
+
+cut -d: -f1 /etc/passwd
+
+Resolucao:
+1. Create file with nano command:
+  #!/bin/sh
+  id -G -n "$FT_USER" | tr ' ' ','
+
+[How to:]
+id - print real and effective user and group IDs
+         -G, --groups
+                print all group IDs
+         -n, --name
+                print a name instead of a number
+|, the value you receive is sent to the next command (tr):
+  tr, is a Unix/Linux command that stands for translate.
+    It is used to replace or remove individual characters.
+
+Environment variables are defined using the syntax VARIABLE_NAME="value". For instance, EDITOR="vim" sets the EDITOR variable to "vim". 
+
+
 
