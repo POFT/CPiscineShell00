@@ -179,10 +179,19 @@ o login especificado na environment variable FT_USER é membro, separando-os
 por vírgulas sem espaços.
 
 
+groups, é um comando no Linux que, quando executado, mostra os grupos dos quais o usuário atual pertence.
+
+Se você passar um nome de usuário como argumento (groups username), ele mostra os grupos desse usuário específico.
+
+groups nours
+
+
 #Solucao
 man id
 
+aceder aos grupos
 cut -d: -f1 /etc/passwd
+
 
 Resolucao:
 1. Create file with nano command:
