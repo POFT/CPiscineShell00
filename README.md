@@ -290,12 +290,16 @@ Crie um arquivo contendo apenas 42 e nada mais.
 
 #Solucao
 1. Criar ficheiro com conteudo 42 com nome específico:
-  printf "42" > '"\?$*'MaRViN'*$?\"'
+  printf "42" > "\"\\?\$*'MaRViN'*\$?\\\""
 2. Testar outcome:
   ls -lRa *MaRV* | cat -e
 
 Resultado do outcome: 
--rw---xr-- 1 pmiguel2 2025_porto 2 Jul 16 13:36 "\?$*MaRViN*$?\"$
+-rw-r--r-- 1 pmiguel2 2025_porto 2 Jul 16 14:22 "\?$*'MaRViN'*$?\"$
+
+
+Resultado correto esperado:
+"\?$*'MaRViN'*$?\"$
 
 ==========================================
 
