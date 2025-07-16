@@ -208,7 +208,96 @@ id - print real and effective user and group IDs
   tr, is a Unix/Linux command that stands for translate.
     It is used to replace or remove individual characters.
 
-Environment variables are defined using the syntax VARIABLE_NAME="value". For instance, EDITOR="vim" sets the EDITOR variable to "vim". 
+==========================================
+Exercício 02: find_sh
+Escreva uma linha de comando que procure, na pasta atual e em todas as suas
+subpastas, todos os ficheiros cujos nomes terminam com .sh e que só exiba os seus
+nomes, sem o .sh
+
+[Exemplo:]
+
+      $>./find_sh.sh | cat -e
+      find_sh$
+      file1$
+      file2$
+      file3$
+      $>
+
+#Solucao
+1. Criar ficheiro sh:
+  nano find_sh.sh
+2. Adicionar comando: (Os exercícios de shell devem ser executados com /bin/sh)
+  #!/bin/sh
+  find . -name "*.sh" | sed 's/\.[^.]*$//'
+3. Atribuir permissões:
+  chmod +x find_sh.sh
+
+[How to:]
+(find) para procurar ficheiros e diretórios.
+(find .) procura na pasta atual e em todas as subpastas
+(-name "*.sh") procura ficheiros cujo nome termina com .sh
+(sed) para substituições de texto (alternativa ao basename)
+(s) s/regexp/replacement/ comando de substituição do sed (substitui o padrão encontrado por outro texto).
+  (/) delimitador do comando s (separador entre padrão e substituição)
+  
+  [Regex:] \.[^.]*$
+  (\.) casa com o ponto antes do sh. corresponde a um ponto literal (.) é preciso escapar com a barra invertida (\.) para indicar que é um ponto real.
+  ([ ^ . ]*) casa com sh (letras que não são ponto).
+  ($) indica que é o final da linha/string.
+
+  (//) substitui o padrão encontrado por nada (remove).
+
+
+==========================================
+Exercício 03: count_files
+Escreva uma linha de comando que conta o número de ficheiros e de pastas dentro
+da pasta atual e todas as suas subpastas, incluindo o . da pasta inicial.
+
+[Exemplo:]
+
+    $>./count_files.sh | cat -e
+    42$
+    $>
+
+#Solucao
+1. Criar ficheiro sh:
+  nano count_files.sh
+2. Adicionar comando: (Os exercícios de shell devem ser executados com /bin/sh)
+  #!/bin/sh
+  find . | wc -l
+3. Atribuir permissões:
+  chmod +x count_files.sh
+
+==========================================
+Exercício 04: MAC
+Escreva uma linha de comando que mostre os endereços MAC da sua máquina.
+Cada endereço deve ser seguido de uma quebra de linha.
+
+
+#Solucao
+1. Criar ficheiro sh:
+  nano MAC.sh
+2. Adicionar comando: (Os exercícios de shell devem ser executados com /bin/sh)
+  #!/bin/sh
+  ifconfig | grep ether | awk '{print $2}'
+3. Atribuir permissões:
+  chmod +x MAC.sh
+
+==========================================
+Exercício 05: Consegue criar?
+Crie um arquivo contendo apenas 42 e nada mais.
+
+
+#Solucao
+1. Criar ficheiro com conteudo 42 com nome específico:
+  printf "42" > '"\?$*'MaRViN'*$?\"'
+2. Testar outcome:
+  ls -lRa *MaRV* | cat -e
+
+Resultado do outcome: 
+-rw---xr-- 1 pmiguel2 2025_porto 2 Jul 16 13:36 "\?$*MaRViN*$?\"$
+
+==========================================
 
 
 
