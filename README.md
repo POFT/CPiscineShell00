@@ -37,39 +37,6 @@ tar	    | Archives files into a tarball (.tar) or extracts them	| tar -cvf archi
 __________________________________________________________________________________________________________
 
 ==========================================
-Exercício 00: Z
-Crie um ficheiro chamado z que retorna "Z", seguido por uma quebra de linha quando o comando cat é usado no ficheiro.
-
-
-#Solucao_A
-Para criar um ficheiro chamado z que retorna a letra "Z" seguida de uma quebra de linha quando o comando cat for usado, basta seguir estas etapas no terminal:
-  1.Crie o ficheiro z:
-  
-    echo "Z" > z
-  
-  2. Agora, inserir o comando cat no ficheiro, ele irá exibir "Z" seguido por uma quebra de linha:
-  cat z
-
-Isto é simples e direto. 
-A função do comando echo é escrever "Z" no ficheiro z, e a quebra de linha é automaticamente incluída após a string, já que o comando echo adiciona uma nova linha ao final por padrão.
-Uma string é basicamente uma sequência de caracteres que representam texto. Pode conter letras, números, espaços, símbolos, ou até mesmo uma combinação desses.
-
-Por exemplo:
-"Z" é uma string composta por um único caractere, a letra Z.
-"Olá, mundo!" é uma string com várias letras, uma vírgula, um espaço e um ponto de exclamação.
-"12345" também é uma string — mesmo que pareça um número, porque está entre aspas, é tratada como texto.
-
-
-
-#Solucao_B
-Outra alternativa é usar o comando printf para escrever diretamente no ficheiro, garantindo que a quebra de linha seja inclusa. A diferença do echo é que o printf oferece mais controle sobre o formato da saída.
-  1. inserir o comando:
-  printf "Z\n" > z
-  2. Agora, inserir o comando cat no ficheiro, ele irá exibir "Z" seguido por uma quebra de linha:
-  cat z
-
-Esse método é útil especialmente quando você precisa de um controle mais preciso sobre o formato da string.
-
 ==========================================
 Exercício 01: testShell00
 Crie o ficheiro testShell00 dentro da pasta de entrega ex01/.
@@ -84,47 +51,65 @@ para criar o ficheiro que será entregue.
 
 
 #Solucao
-1. Criar a pasta ex01: 
-  mkdir -p ex01
+1. Criar a pasta ex01:
+
+        mkdir -p ex01
+
 2. Criar o ficheiro testShell00 dentro da pasta ex01:
-  touch testShell00
+
+        touch testShell00
+
 3. Altere as permissões do ficheiro para garantir que o ls -l mostre algo similar:
-  chmod 455 testShell00
-                  [Análise das permissões:]
-                  Primeira parte (r--): Permissões para o proprietário (usuário):
-                  r (leitura) = 4
-                  - (sem permissão de escrita) = 0
-                  - (sem permissão de execução) = 0
-                  Total para o proprietário: 4
-                  Segunda parte (r-x): Permissões para o grupo:
-                  r (leitura) = 4
-                  - (sem permissão de escrita) = 0
-                  x (execução) = 1
-                  Total para o grupo: 5
-                  Terceira parte (r-x): Permissões para outros (público):
-                  r (leitura) = 4
-                  - (sem permissão de escrita) = 0
-                  x (execução) = 1
-                  Total para outros: 5
-                  Código numérico final:
-                  Proprietário: 4
-                  Grupo: 5
-                  Outros: 5
-                  Então, o código numérico correspondente a -r--r-xr-x é 455.
-4. Alterar tamanho do ficheiro para "40", abra o ficheiro com o nano:
-  nano testShell00
-    Escreve o texto com 40 caracteres (Lorem ipsum dolor sit amet, consectetur)
+-r--r-xr-x 1 XX XX 40 Jun 1 23:42 testShell00
+
+        chmod 455 testShell00
+  
+  [Análise das permissões:]
+  Primeira parte (r--): Permissões para o proprietário (usuário):
+    r (leitura) = 4
+    - (sem permissão de escrita) = 0
+    - (sem permissão de execução) = 0
+  Total para o proprietário: 4
+              
+  Segunda parte (r-x): Permissões para o grupo:
+    r (leitura) = 4
+    - (sem permissão de escrita) = 0
+    x (execução) = 1
+  Total para o grupo: 5
+              
+  Terceira parte (r-x): Permissões para outros (público):
+    r (leitura) = 4
+    - (sem permissão de escrita) = 0
+    x (execução) = 1
+  Total para outros: 5
+              
+  Código numérico final:
+  Proprietário: 4
+  Grupo: 5
+  Outros: 5
+  Então o código numérico 455 correspondente a -r--r-xr-x
+                  
+5. Alterar tamanho do ficheiro para "40", abra o ficheiro com o nano:
+  
+        nano testShell00
+    
+  Escreve um texto com 40 caracteres, exemplo(Lorem ipsum dolor sit amet, consectetur)
+      Pressiona CTRL + O e depois ENTER para salvar o ficheiro com as mudanças.
+      Pressiona Y + ENTER (save modified buffer)
       Pressione CTRL + X para sair.
-      Depois, pressione Y para confirmar as alterações.
-      Pressione Enter para salvar o ficheiro com as mudanças.
+
 6. Alterar a data de modificação para algo específico (se você deseja uma data exata, como "Jun 1 23:42")
 Para isso, você pode usar o comando touch com a opção -t para definir uma data e hora específica:
-  touch -t 202506012342 testShell00
+  
+        touch -t 202506012342 testShell00
+
 7. Para criar o arquivo .tar contendo o ficheiro testShell00, você pode usar o comando tar com a opção -cf, que significa:
--c: Criar um novo arquivo tar.
--f: Especificar o nome do arquivo tar a ser criado.
-  tar -cf testShell00.tar testShell00
-(Este comando criará um arquivo chamado testShell00.tar no diretório atual, contendo o ficheiro testShell00 localizado dentro da pasta ex01.)
+
+        tar -cf testshell00.tar testshell00
+
+    -c: Criar um novo arquivo tar.
+    -f: Especificar o nome do arquivo tar a ser criado.
+    (Este comando criará um arquivo chamado testShell00.tar no diretório atual, contendo o ficheiro testShell00 localizado dentro da pasta ex01.)
 
 ==========================================
 Exercício 02: Sim, de novo...
