@@ -40,63 +40,9 @@ ________________________________________________________________________________
 ==========================================
 ==========================================
 ==========================================
-Exercício 03: SSH me!
-Cria a tua própria chave SSH. Uma vez criada:
-◦ Acrescente ao repositório a sua chave pública num ficheiro chamado id_rsa_pub
-◦ Atualize a sua chave SSH na intra. Isto vai permitir enviar o seu repositório
-para o nosso servidor git.
-
-#Solucao
-
-Aceder:
-
-    cd ~/.ssh
-
-    cat id_rsa.pub
-
-  Copy the key:
-  ssh-rsa (...) 42porto.com
 
 
-==========================================
 
-Exercício 06: gitignore
-
-    nano git_ignore.sh
-
-#!/bin/sh
-git ls-files --other --ignored --exclude-standard
-
-git ls-files = Comando base que mostra arquivos que o Git conhece — normalmente os que estão no índice (staging area).
---other = Mostra os arquivos não rastreados (também chamados de untracked). Ou seja, arquivos que estão no diretório, mas que o Git nunca viu.
---ignored = Mostra os arquivos que estão sendo ignorados pelo Git, com base nas regras de .gitignore, etc.
---exclude-standard = Diz ao Git para usar as regras de ignore "padrão", que incluem: #O arquivo .gitignore do repositório, #O arquivo .git/info/exclude (específico do repositório), #O arquivo global de ignore (~/.gitignore_global, se configurado)
-
-Resumo do que o comando retorna:
-  Esse comando lista todos os arquivos que o Git não está rastreando, sejam eles:
-  
-  Arquivos novos, que você criou e ainda não deu git add
-  
-  Arquivos que o Git está ignorando por estarem em .gitignore
-
-==========================================
-
-Exercício 07: dif
-
-wget <url>
-
-
-patch [options] [originalfile [patchfile]]
-
-Criar ficheiro b com a diferenca:
-
-    patch a -o b sw.diff
-
--o outfile  or  --output=outfile
-          Send output to outfile instead of patching files in place.  Do not use this option if outfile is one of the files to be patched.  When outfile is -, send output to standard output, and  send  any
-          messages that would usually go to standard output to standard error.
-
-==========================================
 
 +++++++++++++++++++++++++++++++++++++++++++
 # CPiscineShell01
