@@ -44,12 +44,22 @@ Crie um ficheiro chamado z que retorna "Z", seguido por uma quebra de linha quan
 #Solucao_A
 Para criar um ficheiro chamado z que retorna a letra "Z" seguida de uma quebra de linha quando o comando cat for usado, basta seguir estas etapas no terminal:
   1.Crie o ficheiro z:
-  echo "Z" > z
+  
+    echo "Z" > z
+  
   2. Agora, inserir o comando cat no ficheiro, ele irá exibir "Z" seguido por uma quebra de linha:
   cat z
 
-Isso é simples e direto. 
+Isto é simples e direto. 
 A função do comando echo é escrever "Z" no ficheiro z, e a quebra de linha é automaticamente incluída após a string, já que o comando echo adiciona uma nova linha ao final por padrão.
+Uma string é basicamente uma sequência de caracteres que representam texto. Pode conter letras, números, espaços, símbolos, ou até mesmo uma combinação desses.
+
+Por exemplo:
+"Z" é uma string composta por um único caractere, a letra Z.
+"Olá, mundo!" é uma string com várias letras, uma vírgula, um espaço e um ponto de exclamação.
+"12345" também é uma string — mesmo que pareça um número, porque está entre aspas, é tratada como texto.
+
+
 
 #Solucao_B
 Outra alternativa é usar o comando printf para escrever diretamente no ficheiro, garantindo que a quebra de linha seja inclusa. A diferença do echo é que o printf oferece mais controle sobre o formato da saída.
