@@ -107,8 +107,15 @@ ficheiro que será entregue.
   
         touch -t 202506012047 test0
         touch -t 202506012146 test1
+        touch -t 202506012245 test2
+        touch -t 202506012344 test3
+        touch -t 202506012343 test4
+        touch -t 202506012344 test5
+        touch -h -t 202506012220 test6
 
+7. Criar o ficheiro .tar para entrega:
 
+          tar -cf exo2.tar test0 test1 test2 test3 test4 test5 test6
    
 ==========================================
 Exercício 03: SSH me!
